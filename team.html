@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code Naturally</title>
+    <!-- Compiled and minified CSS -->
+    <link rel='stylesheet' href='/stylesheets/materialize.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="/javascripts/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/49c2905071.js"></script>
+    <!-- React -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <!-- App -->
+    <script type="text/babel" src="/javascripts/team.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper amber lighten-4">
+                    <a href="/" class="brand-logo"><img src="/images/cn_logo_scaled.png" width=150 alt=""></a>
+                    <a href="https://www.facebook.com/codenaturally"><i id="first_icon" class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/codenaturally/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.pinterest.com/codenaturally/"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/codenaturally"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li id="sign_up"><a class="waves-effect waves-light btn red lighten-2 white-text" href="/signup">Sign Up</a></li>
+                    </ul>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li id="sign_up"><a class="waves-effect waves-light btn red lighten-2 white-text" href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <h4 id="welcome" class="center-align">Welcome to CodeNaturally. Meet our team members below!</h4>
+    <main class="grey-text text-darken-2">
+    </main>
+    <footer class="page-footer amber lighten-4 black-text">
+        <div class="container">
+            <div class="footer-copyright black-text amber lighten-4">
+                <div class="row center-align">
+                    © 2016 Code Naturally Inc.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+$(".button-collapse").sideNav();
+</script>
+
+</html>
