@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <title>Uber Event Stats</title>
     <!-- Compiled and minified CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script type="text/babel" src="/javascripts/stats.js"></script>
 </head>
 
 <body>
@@ -22,18 +22,18 @@
         <div class="row stats">
 
             <section class="attendees floatleft">
-                <p class="figures"> 23 </p>
+                <p id="attendees" class="figures"> 23 </p>
                 <p class="caption"> attendees </p>
             </section>
 
             <section class="percentage floatleft">
 
-                <p class="figures"> 73% </p>
+                <p id="percentage" class="figures"> 73% </p>
                 <p class="caption"> people going</p>
             </section>
 
             <section class="enroute floatleft">
-                <p class="figures"> 41 </p>
+                <p id="enroute" class="figures"> 41 </p>
                 <p class="caption"> en route </p>
             </section>
 
@@ -41,5 +41,55 @@
 
     </div>
 </body>
+<script>
+$(function(){
 
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1690944754537700',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+
+    renderEvents();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+})
+
+function renderEvents(){
+$.get("https://flask-deploy-uberhacks.herokuapp.com/info", function(data){
+     var eventId = data.eventId;
+     FB.api('/v2.8/' + eventId + '/attending/', {"summary":"count", "access_token":"EAAV5EdSmx1oBABKblmL6NWqsOZAMQgw9uZBMgtSkXwGDuUMlDoD5mSZCLXihS45t7l6T2a5M8aAdSjSfOULzt17QrhPspZA07dm9GWxgEZBH8APR3Q4RQkOzu5G7zdjtgM6vNqz1C8ocIRjhcrfFaIy6XxGveNZBTvYbBy98iFXZAGH1pd0n71PgU4iIpIZCIA8ZD"}, function(response) {
+            // var attendees = response.summary.count
+            // console.log(attendees)
+            // $("#attendees").text(attendees);
+            
+            var attendees = data.atEvent
+            console.log(attendees)
+            $("#attendees").text(attendees)
+
+            var going = data.summary.count
+            var percentage = (data.atEvent)/going
+            console.log(percentage)
+            $("#percentage").text(percentage);
+
+            var enroute = (data.enroute)
+            console.log(enroute)
+            $("#enroute").text(enroute);
+        
+        })
+        console.log(response)
+
+    });
+}
+
+</script>
 </html>
