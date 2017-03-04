@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: "Avenir Next";
+}
+
+.row {
+    display: table;
+    content: "";
+    clear: both;
+    width: 100%;
+}
+
+.floatleft {
+    float: left;
+}
+
+.eventtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 67px;
+    line-height: 0.4em;
+    background-color: #0d4c5f;
+    color: #a6daff;
+}
+
+.stats {
+    height: 630px;
+}
+
+section {
+    width: 33.3%;
+    height: 100%;
+    text-align: center;
+    background-color: #a6daff;
+    color: #0d4c5f;
+}
+
+.caption {
+    font-size: 30px;
+    margin-top: 0px;
+    font-family: "Avenir Next"
+}
+
+.figures {
+    font-size: 100px;
+    margin-bottom: 0px;
+    margin-top: 40%;
+}
