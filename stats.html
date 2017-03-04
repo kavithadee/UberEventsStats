@@ -65,7 +65,7 @@ $(function(){
 })
 
 function renderEvents(){
-$.get("https://flask-deploy-uberhacks.herokuapp.com/info", function(data){
+$.get("http://flask-deploy-uberhacks.herokuapp.com/info", function(data){
      FB.api('/v2.8/' + eventId, {"access_token":"EAAV5EdSmx1oBABKblmL6NWqsOZAMQgw9uZBMgtSkXwGDuUMlDoD5mSZCLXihS45t7l6T2a5M8aAdSjSfOULzt17QrhPspZA07dm9GWxgEZBH8APR3Q4RQkOzu5G7zdjtgM6vNqz1C8ocIRjhcrfFaIy6XxGveNZBTvYbBy98iFXZAGH1pd0n71PgU4iIpIZCIA8ZD"}, function(resp) {
         $("#eventName").text(resp.name)
      })
